@@ -375,6 +375,102 @@
             </button>
             <!-- <button class="btn btn-outline-danger btn-show mt-3">เฉลย</button> -->
           </div>
+          <!-- NOW PRACTICE 2 -->
+          <div class="mt-3">
+            <h4>แบบฝึกหัด2</h4>
+            เติมช่องว่างด้วยคำบุพบท
+            <div class="mt-2">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <b>ข้อ 1. </b>Do you ever get tired
+                  <input
+                    type="text"
+                    style="max-width: 200px"
+                    class="form-control d-inline ans2-1"
+                  />
+                  watching movies?
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-2">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <b>ข้อ 2. </b>What are you interested
+                  <input
+                    type="text"
+                    style="max-width: 200px"
+                    class="form-control d-inline ans2-2"
+                  />
+                  doing this weekend?
+                </div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <b>ข้อ 3. </b>Do you ever get excited
+                  <input
+                    type="text"
+                    style="max-width: 200px"
+                    class="form-control d-inline ans2-3"
+                  />
+                  doing your homework?
+                </div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <b>ข้อ 4. </b>What are most people terrified
+                  <input
+                    type="text"
+                    style="max-width: 200px"
+                    class="form-control d-inline ans2-4"
+                  />
+                  ?
+                </div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <b>ข้อ 5. </b>Do you get bored
+
+                  <input
+                    type="text"
+                    style="max-width: 200px"
+                    class="form-control d-inline ans2-5"
+                  />
+                  listening to classical music?
+                </div>
+              </div>
+            </div>
+            <div class="mt-2">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                  <b>ข้อ 6. </b>Why are some people frightened
+
+                  <input
+                    type="text"
+                    style="max-width: 200px"
+                    class="form-control d-inline ans2-6"
+                  />
+                  airplanes?
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-success btn-ans2 mt-3">
+              ส่งคำตอบ
+            </button>
+            <!-- <button class="btn btn-outline-danger btn-show mt-3">เฉลย</button> -->
+          </div>
+        </div>
+        <div class="card-footer">
+          <a type="button" class="btn btn-primary" href="practiceUnit2.html"
+            >ต่อไป</a
+          >
         </div>
       </div>
     </div>
@@ -439,6 +535,50 @@
           Swal.fire({
             icon: iconx,
             title: `คะแนน ${score}/5`,
+          });
+        });
+
+        $(".btn-ans2").click(function () {
+          //user-ans
+          let ans1 = $(".ans2-1").val();
+          let ans2 = $(".ans2-2").val();
+          let ans3 = $(".ans2-3").val();
+          let ans4 = $(".ans2-4").val();
+          let ans5 = $(".ans2-5").val();
+          let ans6 = $(".ans2-6").val();
+
+          //check
+          let score = 0;
+          if (ans1 == "of") {
+            score += 1;
+          }
+          if (ans2 == "in") {
+            score += 1;
+          }
+          if (ans3 == "about" || ans3 == "by") {
+            score += 1;
+          }
+          if (ans4 == "of" || ans4 == "at") {
+            score += 1;
+          }
+          if (ans5 == "by" || ans5 == "with") {
+            score += 1;
+          }
+          if (ans6 == "by" || ans6 == "of") {
+            score += 1;
+          }
+          //display
+          iconx = "";
+          if (score == 0) {
+            iconx = "error";
+          } else if (score < 6) {
+            iconx = "info";
+          } else {
+            iconx = "success";
+          }
+          Swal.fire({
+            icon: iconx,
+            title: `คะแนน ${score}/6`,
           });
         });
       });
